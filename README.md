@@ -1,0 +1,4 @@
+-one TC related to front and the other one related to back 
+-to run the test, form pom.xml run as testNG
+-Chrome version Version 125.0.6422.113
+-function for open in other browser but need to download the version of edge and add it into drivers folder
