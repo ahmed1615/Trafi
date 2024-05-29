@@ -51,6 +51,6 @@ public class BaseTest {
 	
 	@AfterSuite
 	public void CloseTab() {
-		driver.quit();
+		driver.quit(); 
 	}
 }
