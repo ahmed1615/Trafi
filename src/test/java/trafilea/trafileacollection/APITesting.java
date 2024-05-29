@@ -59,7 +59,7 @@ public class APITesting {
 	                .when()
 	                .patch("/users/{userId}");
 	        		AssertJUnit.assertEquals(updateUserResponse.getStatusCode(), 200);
-	        		//AssertJUnit.assertEquals(updatedName, updateUserResponse.jsonPath().getString("data.name"));
+	        		AssertJUnit.assertEquals(updatedName, updateUserResponse.jsonPath().getString("data.name"));
 	        }
 	    
 	        @Test(priority = 4)
