@@ -18,11 +18,9 @@ public class MainClass {
 	public Select select;
 	public JavascriptExecutor js;
 	
-	
 	public MainClass(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		MainClass.driver = driver;
-			
+		MainClass.driver = driver;		
 	}
 	
 	protected WebDriver getDriver() {
@@ -30,12 +28,10 @@ public class MainClass {
         
     }
 	
- 
-
 	public static void clickOnButton(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
-		element.click();
+		element.click();	
 	}
 	
 	public static void selectvalue(List <WebElement> elements, String Value) {
@@ -47,10 +43,7 @@ public class MainClass {
 				element.click();
 				break;
 			}
-		
-		
 		}
-	
 	}
 	
 	public static void filladdvalue(WebElement element, String value)  {
@@ -72,6 +65,7 @@ public class MainClass {
 		elementtwo.click();
 		driver.switchTo().defaultContent();
 	}
+	
 	public static void fillcarddetils( WebElement element, WebElement elementtwo, String value, String vaule2, String value3, String value4) {
 		Actions a = new Actions(driver);
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
@@ -87,6 +81,7 @@ public class MainClass {
 		a.sendKeys(Keys.TAB).build().perform();
 		a.sendKeys(value4).build().perform();
 	}
+	
 	public static void arrowDownAndEnter() {
 		Actions a = new Actions(driver);
 		a.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
@@ -96,6 +91,7 @@ public class MainClass {
 		Actions a = new Actions(driver);
 		a.sendKeys(Keys.TAB).build().perform();
 	}
+	
 	public static boolean AssertisdisayplesAndSelected(WebElement element) {
 		if(element.isDisplayed()&&element.isEnabled()&&element.isSelected()) {
 		return true;}
@@ -103,10 +99,12 @@ public class MainClass {
 		return false;
 		}
 	}
+	
 	protected void Scrolldowntoelement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);;
 	}
+	
 	public static boolean verifyAttribute(WebElement element , String attribute, String expectedAttribute) {
 		String ATTRIBUTE = element.getAttribute(attribute).toString();
 		if(ATTRIBUTE==expectedAttribute) {
@@ -115,8 +113,5 @@ public class MainClass {
 		else {
 			return false;
 		}
-	}
-		
-}
-	
-		
+	}	
+}	

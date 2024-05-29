@@ -24,5 +24,4 @@ public class HomePage extends MainClass {
 	public void clickOnBestSellers() {
 		clickOnButton(bestSellers);
 	}
-	
 }
