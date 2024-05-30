@@ -20,20 +20,21 @@ public class BaseTest {
 
 	@BeforeSuite
 	@Parameters({"browser", "OS"})
-	public void StartDriver(@Optional("chrome") String browsername, @Optional("Windows") String OSname) {
-		if(browsername.equalsIgnoreCase("chrome")&& OSname.equalsIgnoreCase("Windows")) {
-		System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver.exe");
-		driver=new ChromeDriver();
+	public void StartDriver(String browser,String OS) {
+		if(browser.equalsIgnoreCase("chrome") &&OS.equalsIgnoreCase("Windows")) {
+				System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver.exe");
+				driver=new ChromeDriver();
 		}
-		else if(browsername.equalsIgnoreCase("chrome")&& OSname.equalsIgnoreCase("mac")) {
+		
+		else if(browser.equalsIgnoreCase("chrome")&& OS.equalsIgnoreCase("mac")) {
 			System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver");
 			driver=new ChromeDriver();
 			}
-		else if(browsername.equalsIgnoreCase("firefox")) {
+		else if(browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.chrome.driver",user+"/drivers/geckodriver.exe");
 			driver=new FirefoxDriver(); 
 		}
-		else if (browsername.equalsIgnoreCase("edge")) {
+		else if (browser.equalsIgnoreCase("edge")) {
 			System.setProperty("webdriver.chrome.driver",user+"/drivers/msedgedriver.exe");
 			driver=new EdgeDriver(); 
 		}

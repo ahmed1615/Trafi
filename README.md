@@ -4,9 +4,9 @@
 
 3-Chrome version Version 125.0.6422.113
 
-5-if the OS is mac in testng.xml in line 7 let the value of OS mac or MAC like that <parameter name="OS" value="mac"></parameter> 
+5-if the OS is mac in testng.xml in line 5 let the value of OS mac or MAC like that <parameter name="OS" value="mac"></parameter> 
 
-6-if the OS is windows in testng.xml in line 7 let the value of OS windows or WINDOWS like that <parameter name="OS" value="windows"></parameter>
+6-if the OS is windows in testng.xml in line 5 let the value of OS windows or WINDOWS like that <parameter name="OS" value="windows"></parameter>
  
 7-function for open in other browser but need to download the version of edge and add it into drivers folder
 
