@@ -11,6 +11,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import Util.ScreenShot;
+import groovy.cli.Option;
 
 public class BaseTest {
 	public static WebDriver driver;
@@ -20,16 +21,20 @@ public class BaseTest {
 
 	@BeforeSuite
 	@Parameters({"browser", "OS"})
-	public void StartDriver(String browser,String OS) {
-		if(browser.equalsIgnoreCase("chrome") &&OS.equalsIgnoreCase("Windows")) {
+	public void StartDriver(@Optional("chrome") String browser,@Optional("windows") String OS) {
+		if(browser.equalsIgnoreCase("chrome")) {
+			if(OS.equalsIgnoreCase("Windows")) {
 				System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver.exe");
-				driver=new ChromeDriver();
+				driver=new ChromeDriver();	
+				}
 		}
 		
-		else if(browser.equalsIgnoreCase("chrome")&& OS.equalsIgnoreCase("mac")) {
-			System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver");
-			driver=new ChromeDriver();
-			}
+		else if(browser.equalsIgnoreCase("chrome")) {
+			if(OS.equalsIgnoreCase("mac")) {
+				System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver");
+				driver=new ChromeDriver();	
+				}
+		}
 		else if(browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.chrome.driver",user+"/drivers/geckodriver.exe");
 			driver=new FirefoxDriver(); 
