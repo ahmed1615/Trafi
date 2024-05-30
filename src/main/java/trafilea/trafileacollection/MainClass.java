@@ -29,7 +29,7 @@ public class MainClass {
     }
 	
 	public static void clickOnButton(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();	
 	}
@@ -37,7 +37,7 @@ public class MainClass {
 	public static void selectvalue(List <WebElement> elements, String Value) {
 		for(int i=0; i<elements.size();i++) {
 			if(elements.get(i).getText()==Value) {
-				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 				wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
 				WebElement element =elements.get(i);
 				element.click();
@@ -48,7 +48,7 @@ public class MainClass {
 	
 	public static void filladdvalue(WebElement element, String value)  {
 		
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.sendKeys(value);
 	}
@@ -59,7 +59,7 @@ public class MainClass {
 	}
 	
 	public static void switchtoframeandDoOneAction(WebElement element, WebElement elementtwo) {
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
 		wait.until(ExpectedConditions.elementToBeClickable(elementtwo));
 		elementtwo.click();
@@ -68,7 +68,7 @@ public class MainClass {
 	
 	public static void fillcarddetils( WebElement element, WebElement elementtwo, String value, String vaule2, String value3, String value4) {
 		Actions a = new Actions(driver);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
 		wait.until(ExpectedConditions.elementToBeClickable(elementtwo));
 		elementtwo.click();

@@ -21,15 +21,15 @@ public class BaseTest {
 
 	@BeforeSuite
 	@Parameters({"browser", "OS"})
-	public void StartDriver(@Optional("chrome") String browser,@Optional("windows") String OS) {
+	public void StartDriver(@Optional("chrome") String browser,@Optional("mac") String OS) {
 		if(browser.equalsIgnoreCase("chrome")) {
-			if(OS.equalsIgnoreCase("Windows")) {
+			if(OS.equalsIgnoreCase("windows")) {
 				System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver.exe");
 				driver=new ChromeDriver();	
 				}
 		}
 		
-		else if(browser.equalsIgnoreCase("chrome")) {
+		 if(browser.equalsIgnoreCase("chrome")) {
 			if(OS.equalsIgnoreCase("mac")) {
 				System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver");
 				driver=new ChromeDriver();	
