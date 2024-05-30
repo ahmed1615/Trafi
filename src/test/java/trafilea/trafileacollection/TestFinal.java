@@ -56,6 +56,4 @@ public class TestFinal extends BaseTest{
 		assertEquals(contact.errormessageforCrad.getText(), ERROR);
 		contact.verifyimagecard("CreditCards accepted");
 	}
-	
-
 }

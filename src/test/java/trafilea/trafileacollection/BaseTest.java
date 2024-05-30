@@ -9,9 +9,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import Util.ScreenShot;
-import groovy.cli.Option;
+
 
 public class BaseTest {
 	public static WebDriver driver;
@@ -29,17 +28,17 @@ public class BaseTest {
 				}
 		}
 		
-		else if(browser.equalsIgnoreCase("chrome")) {
+		 if(browser.equalsIgnoreCase("chrome")) {
 			if(OS.equalsIgnoreCase("mac")) {
 				System.setProperty("webdriver.chrome.driver",user+"/drivers/chromedriver");
 				driver=new ChromeDriver();	
 				}
 		}
-		else if(browser.equalsIgnoreCase("firefox")) {
+		 if(browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.chrome.driver",user+"/drivers/geckodriver.exe");
 			driver=new FirefoxDriver(); 
 		}
-		else if (browser.equalsIgnoreCase("edge")) {
+		 if (browser.equalsIgnoreCase("edge")) {
 			System.setProperty("webdriver.chrome.driver",user+"/drivers/msedgedriver.exe");
 			driver=new EdgeDriver(); 
 		}
